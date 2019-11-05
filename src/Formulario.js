@@ -55,9 +55,10 @@ class Formulario extends Component {
                             name="livro"
                             value={livro}
                             onChange={this.escutadorDeInput} />
+
                     </div>
                     <div className="input-field col s4">
-                        <label className="input-field" htmlFor="preco">Preço</label>
+                        <label className="input-field col s4" htmlFor="preco">Preço</label>
                         <input
                             className="validate"
                             id="preco"
@@ -66,9 +67,10 @@ class Formulario extends Component {
                             value={preco}
                             onChange={this.escutadorDeInput} />
                     </div>
-                    <button onClick={this.submitFormulario} type="button"
-                        className="waves-effect waves-light indigo lighten-2 button btn">Salvar</button>
                 </div>
+
+                <button onClick={this.submitFormulario} className="btn waves-effect waves-light indigo lighten-2" type="button">Salvar
+                </button>
             </form>
         );
     }
