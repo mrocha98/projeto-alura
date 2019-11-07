@@ -1,10 +1,9 @@
 import React, { Component, Fragment } from 'react';
-import 'materialize-css/dist/css/materialize.min.css';
-import './App.css';
+import 'materialize-css/dist/css/materialize.min.css'
 import Tabela from './Tabela';
 import Formulario from './Formulario';
 import Header from './Header';
-
+import PopUp from "./PopUp";
 
 class App extends Component {
 
@@ -31,7 +30,7 @@ class App extends Component {
         preco: '100'
       }
     ],
-  }
+  };
 
   removeAutor = index => {
 
@@ -39,15 +38,20 @@ class App extends Component {
 
     this.setState({
       autores: autores.filter((autor, posAtual) => {
-        return posAtual !== index;
+        if(posAtual === index){
+          PopUp.exibeMensagem("removed", `Autor ${autor.nome} removido com sucesso!`);
+          return false;
+        }return true;
       }),
-    })
+    });
 
-  }
+  };
 
   escutadorDeSubmit = autor => {
     this.setState({ autores: [...this.state.autores, autor] });
-  }
+    PopUp.exibeMensagem("success", "Autor adicionado com sucesso!");
+  };
+
   render() {
     return (
       <Fragment>
