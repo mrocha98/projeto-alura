@@ -1,6 +1,6 @@
 import React from 'react';
 
-import LinkWrapper from './LinkWrapper';
+import LinkWrapper from '../../utils/LinkWrapper';
 
 const Lista = () => {
     return (
